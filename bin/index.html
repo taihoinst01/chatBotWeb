@@ -1,6 +1,18 @@
+<!DOCTYPE html>
 <html>
-<body>
-<iframe style="height:480px; width:402px" src='https://webchat.botframework.com/embed/quotationBot?s=VeS5h0yM8XI.cwA.mRk.ZtK8_MjAG99dNUGZAFiS2OkQETyoVve25bjzc0r4MLA'></iframe>
-
-</body>
+  <head>
+    <link href="./botchat.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="bot"/>
+    <script src="./botchat.js"></script>
+    <script>
+      BotChat.App({
+        directLine: { secret: '1AAQoATBrDE.cwA.0x8.Pt6g4GRoOanwbR5cGoyyBzuLJkju7vvqX4NC1JpsrpQ' },
+        user: { id: 'userid' },
+        bot: { id: 'botid' },
+        resize: 'detect'
+      }, document.getElementById("bot"));
+    </script>
+  </body>
 </html>
