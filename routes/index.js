@@ -6,7 +6,7 @@ var fs = require('fs');
 /* GET home page. */
 router.get('/', function (req, res) {
     //res.render('index', { title: 'Express' });
-    fs.readFile('index.html', function (error, data) {
+    fs.readFile('./index.html', function (error, data) {
         if (error) {
             console.log(error);
         } else {
