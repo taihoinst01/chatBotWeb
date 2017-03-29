@@ -65,7 +65,7 @@ router.get('/', function(req, res, next) {
             selectQuery = 'SELECT * ' +
                           'FROM( ' +
                                 'SELECT ' +
-                                    'ROW_NUMBER() OVER(order by u.user_number desc) AS rownum, u.sid, CONVERT(char(23),u.user_number, 121) AS user_number, ' +
+                                    'ROW_NUMBER() OVER(order by u.sid desc) AS rownum, u.sid, CONVERT(char(23),u.user_number, 121) AS user_number, ' +
                                     'u.customer_comment, c.chatbot_comment, u.channel, u.response_time, u.reg_date ' +
                                 'FROM ' +
                                     'tbl_unlabeled_query u, tbl_chatbot_comment c ' +
@@ -105,7 +105,7 @@ router.get('/paging', function (req, res, next) {
     selectQuery = 'SELECT * ' +
                   'FROM( ' +
                         'SELECT ' +
-                            'ROW_NUMBER() OVER(order by u.user_number desc) AS rownum, u.sid, CONVERT(char(23),u.user_number, 121) AS user_number, ' +
+                            'ROW_NUMBER() OVER(order by u.sid desc) AS rownum, u.sid, CONVERT(char(23),u.user_number, 121) AS user_number, ' +
                             'u.customer_comment, c.chatbot_comment, u.channel, u.response_time, u.reg_date ' +
                         'FROM ' +
                             'tbl_unlabeled_query u, tbl_chatbot_comment c ' +
