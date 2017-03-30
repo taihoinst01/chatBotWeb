@@ -138,7 +138,7 @@
         <a href="#" onclick="paging('<%=currentPage-1%>');"> < </a>     
         <%}%>   
         <%for(var i = startPage;i <= endPage;i++){%>
-        <%if (currentPage == i) {%>
+        <%if(currentPage == i){%>
         | <a class="page_number" style="color:red;"><%=i%></a> |
         <%}else{%>
         | <a class="page_number" href="#" onclick="paging('<%=i%>');"><%=i%></a> |
