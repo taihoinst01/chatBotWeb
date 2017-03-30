@@ -17,7 +17,10 @@
         });
 
         function paging(currentPageTemp) {
+            if (typeof currentPageTemp == 'object')
+                return;
             var currentPage = Number(currentPageTemp);
+
             $('input[name="currentPage"]').val(currentPage);
             $.ajax({      
                 type: 'GET',  
