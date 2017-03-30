@@ -14,6 +14,7 @@
                 paging(currentPage);
             });
         });
+
         function paging(currentPageTemp) {
             var currentPage = Number(currentPageTemp);
             $('input[name="currentPage"]').val(currentPage);
@@ -31,7 +32,7 @@
                         txt += '<td>' + data.result[i].channel + '</td>';
                         txt += '<td>' + data.result[i].response_time + '</td>';
                         txt += '<td>' + data.result[i].reg_date + '</td>';
-                        txt += '<td><input type="button" value="삭제" /></td></tr>';
+                        txt += '<td><input type="button" value="삭제" onclick="deleteUser(' + data.result[i].sid + ')"/></td></tr>';
 
                     }
                     $('tbody').html('');
@@ -45,8 +46,12 @@
                     if (data.currentPage != 1) {
                         pageNum += '<a href="#" onclick="paging(' + (data.currentPage-1) + ');"> < </a>';
                     }
-                    for(var i=data.startPage;i<=data.endPage;i++){
-                        pageNum += '| <a class="page_number" href="#" onclick="paging('+i+');">' + i + '</a> |';
+                    for (var i = data.startPage; i <= data.endPage; i++) {
+                        if (data.currentPage == i) {
+                            pageNum += '| <a class="page_number" style="color:red;">' + i + '</a> | ';
+                        } else {
+                            pageNum += '| <a class="page_number" href="#" onclick="paging(' + i + ');">' + i + '</a> | ';
+                        }
                     }
                     if (data.currentPage != data.totPageCount) {
                         pageNum += '<a href="#" onclick="paging(' + (data.currentPage+1) + ');"> > </a>';
@@ -62,6 +67,24 @@
                 }  
             });  
         };
+
+        function deleteUser(sid) {
+            if (confirm('삭제하시겠습니까?')) {
+                $('input[name="deleteSid"]').val(sid);
+
+                $.ajax({
+                    type: 'GET',
+                    url: '/users/delete',
+                    data: $('#pageData').serialize(),
+                    success: function (data) {
+                        $('input[name="deleteSid"]').val('');
+                        location.href = '/users';
+                    },
+                    error: function (e) {
+                    }
+                });
+            }
+        };
     </script>
     
     <title></title>
@@ -73,6 +96,7 @@
         <input type="hidden" name="pageCount" value="<%=pageCount%>" />
         <input type="hidden" name="startPage" value="<%=startPage%>" />
         <input type="hidden" name="endPage" value="<%=endPage%>" />
+        <input type="hidden" name="deleteSid" value="" />
     </form>
 
     <div style="height:20px;">
@@ -100,7 +124,7 @@
                 <td><%=item.response_time%></td>
                 <td><%=item.reg_date%></td>
                 <td>
-                    <input type="button" value="삭제" />
+                    <input type="button" value="삭제" onclick="deleteUser('<%=item.sid%>')"/>
                 </td>
             </tr>
             <%});%>
@@ -113,8 +137,12 @@
         <%if(currentPage != 1){%>
         <a href="#" onclick="paging('<%=currentPage-1%>');"> < </a>     
         <%}%>   
-        <%for(var i=startPage;i<=endPage;i++){%>
+        <%for(var i = startPage;i <= endPage;i++){%>
+        <%if (currentPage == i) {%>
+        | <a class="page_number" style="color:red;"><%=i%></a> |
+        <%}else{%>
         | <a class="page_number" href="#" onclick="paging('<%=i%>');"><%=i%></a> |
+        <%}%>
         <%}%>
         <%if(currentPage != totPageCount){%>
         <a href="#" onclick="paging('<%=currentPage+1%>');"> > </a>
