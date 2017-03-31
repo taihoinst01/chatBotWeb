@@ -49,7 +49,8 @@ router.get('/', function(req, res, next) {
                                 'tbl_unlabeled_query u, tbl_chatbot_comment c ' +
                               'WHERE ' +
                                 'u.chatbot_comment_code = c.sid ' +
-                              'AND u.active_flag = 0 ';
+                              'AND ' +
+                                'u.active_flag = 0 ';
             request.query(selectQuery, function (err, recordset) {
                 if (err) {
                     console.log("DB error : " + err);
@@ -134,7 +135,7 @@ router.get('/paging', function (req, res, next) {
     console.log('pageCount : ' + pageCount);
     console.log('startPage : ' + startPage);
     console.log('endPage : ' + endPage);*/
-
+    
     //select currentPage rows.
     selectQuery = 'SELECT * ' +
                   'FROM( ' +
@@ -145,7 +146,8 @@ router.get('/paging', function (req, res, next) {
                             'tbl_unlabeled_query u, tbl_chatbot_comment c ' +
                         'WHERE ' +
                             'u.chatbot_comment_code = c.sid ' +
-                        'AND u.active_flag = 0' +
+                        'AND ' +
+                            'u.active_flag = 0' +
                   ') A ' +
                   'WHERE ' +
                         'rownum > ' + ((currentPage - 1) * 10) + ' ' +
