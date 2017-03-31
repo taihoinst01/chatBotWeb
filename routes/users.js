@@ -105,6 +105,39 @@ router.get('/paging', function (req, res, next) {
     var pageCount = Number(req.query.pageCount);
     var startPage = Number(req.query.startPage);
     var endPage = Number(req.query.endPage);
+    /*console.log('-----before-----');
+    console.log('currentPage : ' + currentPage);
+    console.log('totPageCount : ' + totPageCount);
+    console.log('pageCount : ' + pageCount);
+    console.log('startPage : ' + startPage);
+    console.log('endPage : ' + endPage);*/
+    if (startPage > currentPage) {
+        if (!(1 <= currentPage && currentPage <= pageCount)) {
+            console.log('1');
+            startPage -= pageCount;
+            endPage = currentPage;
+        } else {
+            console.log('2');
+            startPage = 1;
+            endPage = pageCount;
+        }
+    } else if (currentPage > endPage) {
+        if ((totPageCount - currentPage) >= pageCount) { 
+            console.log('3');          
+            startPage += pageCount;
+            endPage = startPage + pageCount - 1;
+        } else {
+            console.log('4');
+            startPage = (parseInt(totPageCount / pageCount) * pageCount) + 1;
+            endPage = totPageCount;         
+        }
+    }
+    /*console.log('-----after-----');
+    console.log('currentPage : ' + currentPage);
+    console.log('totPageCount : ' + totPageCount);
+    console.log('pageCount : ' + pageCount);
+    console.log('startPage : ' + startPage);
+    console.log('endPage : ' + endPage);*/
 
     //select currentPage rows.
     selectQuery = 'SELECT * ' +
