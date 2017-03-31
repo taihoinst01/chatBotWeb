@@ -65,20 +65,20 @@ router.get('/', function(req, res, next) {
 
                 //select first page rows.
                 selectQuery = 'SELECT * ' +
-                    'FROM( ' +
-                    'SELECT ' +
-                    'ROW_NUMBER() OVER(order by u.sid desc) AS rownum, u.sid, CONVERT(char(23),u.user_number, 121) AS user_number, ' +
-                    'u.customer_comment, c.chatbot_comment, u.channel, u.response_time, u.reg_date, u.active_flag ' +
-                    'FROM ' +
-                    'tbl_unlabeled_query u, tbl_chatbot_comment c ' +
-                    'WHERE ' +
-                    'u.chatbot_comment_code = c.sid ' +
-                    'AND u.active_flag = 0 ' +
-                    ') A ' +
-                    'WHERE ' +
-                    'rownum > 0 ' +
-                    'AND ' +
-                    'rownum <= 10';
+                              'FROM( ' +
+                                'SELECT ' +
+                                    'ROW_NUMBER() OVER(order by u.sid desc) AS rownum, u.sid, CONVERT(char(23),u.user_number, 121) AS user_number, ' +
+                                    'u.customer_comment, c.chatbot_comment, u.channel, u.response_time, u.reg_date, u.active_flag ' +
+                                'FROM ' +
+                                    'tbl_unlabeled_query u, tbl_chatbot_comment c ' +
+                                'WHERE ' +
+                                    'u.chatbot_comment_code = c.sid ' +
+                                'AND u.active_flag = 0 ' +
+                              ') A ' +
+                              'WHERE ' +
+                                'rownum > 0 ' +
+                              'AND ' +
+                                'rownum <= 10';
                 request.query(selectQuery, function (err, recordset) {
                     if (err) {
                         console.log("DB error : " + err);
