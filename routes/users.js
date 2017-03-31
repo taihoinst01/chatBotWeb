@@ -113,21 +113,17 @@ router.get('/paging', function (req, res, next) {
     console.log('endPage : ' + endPage);*/
     if (startPage > currentPage) {
         if (!(1 <= currentPage && currentPage <= pageCount)) {
-            console.log('1');
             startPage -= pageCount;
             endPage = currentPage;
         } else {
-            console.log('2');
             startPage = 1;
             endPage = pageCount;
         }
     } else if (currentPage > endPage) {
-        if ((totPageCount - currentPage) >= pageCount) { 
-            console.log('3');          
+        if ((totPageCount - currentPage) >= pageCount) {           
             startPage += pageCount;
             endPage = startPage + pageCount - 1;
         } else {
-            console.log('4');
             startPage = (parseInt(totPageCount / pageCount) * pageCount) + 1;
             endPage = totPageCount;         
         }
