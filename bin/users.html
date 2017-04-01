@@ -11,14 +11,10 @@
     <script>
         
         $(document).ready(function () {
-            $('a.page_number').click(function (currentPage) {
-                paging(currentPage);
-            });
+            
         });
 
-        function paging(currentPageTemp) {
-            if (typeof currentPageTemp == 'object')
-                return;
+        function paging(currentPageTemp) {           
             var currentPage = Number(currentPageTemp);
 
             $('input[name="currentPage"]').val(currentPage);
