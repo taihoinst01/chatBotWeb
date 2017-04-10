@@ -1,8 +1,7 @@
 /* reset */
-body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 15px;
-}
+
+body { background:url(image/chat_bg02.gif) no-repeat  center 0px; overflow:hidden}
+body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {font-family: 'Segoe UI', sans-serif; font-size: 15px; }
 
 .wc-app button {
   background-color: #0063b1;
@@ -19,52 +18,17 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
   padding: 0;
 }
 
-.wc-app audio, .wc-app video {
-  display: block;
-}
+.wc-app audio, .wc-app video {display: block;}
 
+#bot {overflow: hidden;position: absolute;right: 0;left: 0;top: 0; bottom: 0;  margin:auto ;  width:863px; height:746px; background: url(image/chat_bgmobile.png) no-repeat 0px 0px; padding-left:270px}
 /* docking */
-.wc-hidden {
-  visibility: hidden;
-}
+.wc-hidden {visibility: hidden;}
+.wc-header {left: 0; padding: 8px 8px 0 8px;position: absolute;right: 0;top: 0;z-index: 1; }
+.wc-header span{ display:none}
+.wc-time {color: #999;margin-bottom: 10px;}
 
-.wc-header {
-  background-color: #3a96dd;
-  box-shadow: 0 1px rgba(0, 0, 0, 0.2);
-  box-sizing: content-box;
-  color: #fff;
-  font-weight: 500;
-  height: 30px;
-  left: 0;
-  letter-spacing: 0.5px;
-  padding: 8px 8px 0 8px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1;
-}
-
-.wc-time {
-  color: #999;
-  margin-bottom: 10px;
-}
-
-.wc-message-groups {
-  bottom: 50px;
-  left: 0;
-  transform: translateY(0);
-  overflow-x: hidden;
-  overflow-y: scroll;
-  padding: 10px;
-  position: absolute;
-  right: 0;
-  top: 38px;
-  transition: transform 0.2s cubic-bezier(0, 0, 0.5, 1);
-}
-
-.wc-message-group-content {
-  overflow: hidden;
-}
+.wc-message-groups { bottom: 50px;left: 0;transform: translateY(0);overflow-x: hidden;overflow-y: scroll;padding: 10px;position: absolute;right: 0;top: 41px;transition: transform 0.2s cubic-bezier(0, 0, 0.5, 1);}
+.wc-message-group-content {overflow: hidden;}
 
 .wc-suggested-actions {
   background-color: #f9f9f9;
@@ -89,7 +53,7 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
 }
 
 .wc-suggested-actions .wc-hscroll > ul > li button {
-  background-color: #fff;
+  background-color: #3f3f3f;
   color: #3a96dd;
   min-height: 32px;
   overflow: hidden;
@@ -100,7 +64,7 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
 }
 
 .wc-suggested-actions .wc-hscroll > ul > li button:hover {
-  background-color: #fff;
+  background-color: #3f3f3f;
   border-color: #3a96dd;
   color: #3a96dd;
 }
@@ -153,25 +117,10 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
   height: 40px;
 }
 
-.wc-console {
-  border: 5px solid #dbdee1;
-  bottom: 0;
-  box-sizing: border-box;
-  height: 50px;
-  left: 0;
-  position: absolute;
-  right: 0;
-}
+.wc-console {bottom: 7px;box-sizing: border-box; height: 40px;left: 0;position: absolute;right: 0; width:510px }
 
 /* views */
-.wc-chatview-panel {
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-}
+.wc-chatview-panel {overflow: hidden;position: absolute;right: 0;left:-24px;top: -62px; bottom: 0; width:518px; height:507px; margin:auto   }
 
 /* messages */
 .wc-message-wrapper {
@@ -214,12 +163,7 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
   width: 6px;
 }
 
-.wc-message-content {
-  border-radius: 2px;
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
-  padding: 8px;
-  word-break: break-word;
-}
+.wc-message-content {padding: 8px;word-break: break-word; margin-left:50px}
 
 .wc-message-content.clickable {
   cursor: pointer;
@@ -246,36 +190,20 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
   margin-top: 11px;
 }
 
-.wc-message-from {
-  clear: both;
-  color: #999;
-  font-size: 11px;
-  margin-top: 5px;
-}
+.wc-message-from {clear: both;color: #676767;font-size: 11px;margin-top: 5px;}
 
 /* cards */
-.wc-card {
-  background-color: #fff;
-  font-size: 13px;
-}
+.wc-card {background-color: #fff;font-size: 13px; padding:15px !important; border: none !important}
 
-.wc-card button {
-  background-color: transparent;
-  color: #3a96dd;
-  min-height: 32px;
-  width: 100%;
-  padding: 0 16px;
-}
+.wc-card button {background-color:#002c5f;color: #fff;min-height: 32px;width: 100%; padding: 0 15px;-webkit-border-radius:15px;-moz-border-radius:15px; border-radius:15px; border: none}
 
 .wc-card button:hover {
-  background-color: transparent;
-  border-color: #3a96dd;
-  color: #3a96dd;
+  background-color: #0f62eb !important;
+  color: #fff;
 }
 
 .wc-card button:active {
-  background-color: #3a96dd;
-  border-color: #3a96dd;
+  background-color: #033ea0 !important;
   color: #fff;
 }
 
@@ -423,9 +351,7 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
 }
 
 /* list */
-.wc-list > .wc-card {
-  margin-top: 8px;
-}
+.wc-list > .wc-card {margin-top: 8px; border-radius:20px;}
 
 .wc-list > .wc-card:first-child {
   margin-top: 0;
@@ -515,13 +441,10 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
   text-align: right;
 }
 
-.wc-message-from-me .wc-message-content {
-  background-color: #3a96dd;
-  color: #fff;
-}
+.wc-message-from-me .wc-message-content {background-color: #fb7509;color: #fff; -webkit-border-radius:20px;-moz-border-radius:20px; border-radius:20px; padding:12px}
 
 .wc-message-from-me svg.wc-message-callout path {
-  fill: #3a96dd;
+  fill:  #fb7509;
 }
 
 .wc-message-from-me svg.wc-message-callout path.point-left {
@@ -529,7 +452,7 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
 }
 
 .wc-message-from-me svg.wc-message-callout {
-  right: -6px;
+  right: 0px;
 }
 
 /* from bot */
@@ -538,22 +461,15 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
   margin-left: 8px;
 }
 
-.wc-message-from-bot .wc-message-content {
-  background-color: #eceff1;
-  color: #000;
-}
+.wc-message-from-bot .wc-message-content { background-color:#fff;color: #000;-webkit-border-radius:20px;-moz-border-radius:20px; border-radius:20px;padding:12px;box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);}
 
-.wc-message-from-bot svg.wc-message-callout path {
-  fill: #eceff1;
-}
+.wc-message-from-bot svg.wc-message-callout path {  fill: #fff;}
 
 .wc-message-from-bot svg.wc-message-callout path.point-right {
   display: none;
 }
 
-.wc-message-from-bot svg.wc-message-callout {
-  left: -6px;
-}
+.wc-message-from-bot svg.wc-message-callout {width:68px; height:54px; background: url(image/ico_car.png) no-repeat 0 0;left:-15px; margin-top:-5px}
 
 /* console */
 .wc-console > * {
@@ -562,53 +478,20 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
   vertical-align: middle;
 }
 
-.wc-console label {
-  cursor: pointer;
-  display: inline-block;
-  height: 40px;
-}
+.wc-console label {cursor: pointer;display: inline-block;height: 40px;  }
 
-.wc-console svg {
-  fill: #8a8a8a;
-  margin: 11px;
-}
+.wc-console svg {fill: #8a8a8a;margin: 11px;  }
 
-.wc-console textarea, .wc-console input[type=text] {
-  border: none;
-  height: 100%;
-  outline: none;
-  padding: 0;
-  resize: none;
-  width: 100%;
-}
+.wc-console textarea, .wc-console input[type=text] {border: none;height: 100%;outline: none;padding: 0;resize: none;width: 100%;}
 
-.wc-send svg {
-  height: 18px;
-  width: 27px;
-}
+.wc-send svg {height: 18px;width: 27px;}
+.wc-upload { background:url(image/ico_image.gif) no-repeat center center !important}
+.wc-upload svg {height: 18px;width: 26px; visibility:hidden }
 
-.wc-upload svg {
-  height: 18px;
-  width: 26px;
-}
-
-#wc-upload-input {
-  display: none;
-}
-
-.wc-textbox {
-  bottom: 0;
-  left: 48px;
-  right: 49px;
-}
-
-.wc-send {
-  right: 0;
-}
-
-.wc-console.has-text .wc-send svg {
-  fill: #3a96dd;
-}
+#wc-upload-input { display: none;}
+.wc-textbox { bottom: 0;left: 48px;right: 49px;}
+.wc-send {right: 0;}
+.wc-console.has-text .wc-send svg {fill: #3a96dd;}
 
 /* animation */
 .wc-typing {
@@ -670,3 +553,35 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
 .wc-app ::-webkit-scrollbar-thumb {
   background-color: #dbdee1;
 }
+
+
+html { scrollbar-arrow-color: #3f3f3f; scrollbar-Track-Color: #93adcb; scrollbar-base-color:#3f3f3f;scrollbar-Face-Color:#93adcb;scrollbar-3dLight-Color: #fff; scrollbar-DarkShadow-Color: #fff; scrollbar-Highlight-Color: #ffff;
+ scrollbar-Shadow-Color: #fff; }
+		
+/* Chrome, Safari용 스크롤 바 */
+::-webkit-scrollbar {width: 12px; height: 12px;  }
+::-webkit-scrollbar-button:start:decrement, 
+::-webkit-scrollbar-button:end:increment {display: block; width: 12px;height: 12px; background:#93adcb;}
+::-webkit-scrollbar-track {     background:#93adcb; }
+::-webkit-scrollbar-thumb {  background:#7b91ab;  }
+
+
+.wc-header .btn_home { position:absolute; right:10px; top:7px width:22px; height:19px; background:url(image/home.png) no-repeat; display:inline-block; z-index:999; margin-top:5px }
+.wc-header .btn_home :hover{ background:url(image/home_hover.png) no-repeat}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
