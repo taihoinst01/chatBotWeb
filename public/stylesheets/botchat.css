@@ -566,8 +566,8 @@ html { scrollbar-arrow-color: #3f3f3f; scrollbar-Track-Color: #93adcb; scrollbar
 ::-webkit-scrollbar-thumb {  background:#7b91ab;  }
 
 
-.wc-header .btn_home { position:absolute; right:10px; top:7px width:22px; height:19px; background:url(image/home.png) no-repeat; display:inline-block; z-index:999; margin-top:5px }
-.wc-header .btn_home :hover{ background:url(image/home_hover.png) no-repeat}
+.wc-header .btn_home { position:absolute; right:10px; top:7px width:22px; height:19px; background:url(../image/home.png) no-repeat; display:inline-block; z-index:999; margin-top:5px }
+.wc-header .btn_home :hover{ background:url(../image/home_hover.png) no-repeat}
 
 
 
