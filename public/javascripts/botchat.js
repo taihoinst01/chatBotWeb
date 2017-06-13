@@ -5923,12 +5923,37 @@
                 var t = this.props,
                     e = (t.attachments, r.__rest(t, ["attachments"]));
                 return o.createElement("ul", null, this.props.attachments.map(function(t, n) {
-                    return o.createElement("li", {
-                        key: n,
-                        className: t.contentType == "application/vnd.microsoft.card.video" ? "wc-carousel-item wc-carousel-video":"wc-carousel-item"
-                    }, o.createElement(i.AttachmentView, r.__assign({
-                        attachment: t
-                    }, e)))
+
+                        if (t.contentType == "application/vnd.microsoft.card.video") {
+                            return o.createElement("li", {
+                                key: n,
+                                className: "wc-carousel-item wc-carousel-video"
+                            }, o.createElement(i.AttachmentView, r.__assign({
+                                attachment: t
+                            }, e)))
+                        } else if (t.content.title == "35,500,000 원 ~ 38,700,000 원") {
+                            return o.createElement("li", {
+                                key: n,
+                                className: "wc-carousel-item wc-carousel-360"
+                            }, o.createElement(i.AttachmentView, r.__assign({
+                                attachment: t
+                            }, e)))
+                        } else if (t.content.title == "가솔린 3.3 선택") {
+                            return o.createElement("li", {
+                                key: n,
+                                className: "wc-carousel-item wx-carousel-map"
+                            }, o.createElement(i.AttachmentView, r.__assign({
+                                attachment: t
+                            }, e)))
+                        } else {
+                            return o.createElement("li", {
+                                key: n,
+                                className: "wc-carousel-item"
+                            }, o.createElement(i.AttachmentView, r.__assign({
+                                attachment: t
+                            }, e)))
+                        }
+
                 }))
             }, e
         }(o.PureComponent)
