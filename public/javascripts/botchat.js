@@ -5925,7 +5925,7 @@
                 return o.createElement("ul", null, this.props.attachments.map(function(t, n) {
                     return o.createElement("li", {
                         key: n,
-                        className: "wc-carousel-item"
+                        className: t.contentType == "application/vnd.microsoft.card.video" ? "wc-carousel-item wc-carousel-video":"wc-carousel-item"
                     }, o.createElement(i.AttachmentView, r.__assign({
                         attachment: t
                     }, e)))
