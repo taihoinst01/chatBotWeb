@@ -5931,14 +5931,14 @@
                             }, o.createElement(i.AttachmentView, r.__assign({
                                 attachment: t
                             }, e)))
-                        } else if (t.content.title == "35,500,000 원 ~ 38,700,000 원") {
+                        } else if (t.content.title == "35,500,000 원 ~ 38,700,000 원" || t.content.title == "화이트 크림" || t.content.title == "이온 실버" || t.content.title == "루나 그레이") {
                             return o.createElement("li", {
                                 key: n,
                                 className: "wc-carousel-item wc-carousel-360"
                             }, o.createElement(i.AttachmentView, r.__assign({
                                 attachment: t
                             }, e)))
-                        } else if (t.content.title == "가솔린 3.3 선택") {
+                        } else if (t.content.title == "가솔린 3.3 선택" || t.content.title == "판테라 그레이"|| t.content.title == "미드나잇 블랙" || t.content.title == "발렌타인 레드") {
                             return o.createElement("li", {
                                 key: n,
                                 className: "wc-carousel-item wx-carousel-map"
@@ -6189,7 +6189,7 @@
                             var n = void 0;
                             this.props.showTimestamp && (n = this.props.format.strings.timeSent.replace("%1", new Date(this.props.activity.timestamp).toLocaleTimeString())), t = o.createElement("span", null, this.props.activity.from.name || this.props.activity.from.id, n)
                     }
-					if(this.props.activity.attachments != undefined && this.props.activity.attachments[0].contentType == "application/vnd.microsoft.card.hero"){
+					if(this.props.activity.attachments != undefined && this.props.activity.attachments.length > 1 && this.props.activity.attachments[1].contentType == "application/vnd.microsoft.card.hero") {
                     var r = this.props.fromMe ? "me" : "bot",
                         i = a.classList("wc-message-wrapper", this.props.activity.attachmentLayout || "list", this.props.onClickActivity && "clickable"),
                         s = a.classList("wc-message-content wc-card-dialog-background", this.props.selected && "selected");
