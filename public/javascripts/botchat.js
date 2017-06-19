@@ -2533,26 +2533,50 @@
                     };
                 switch (e.contentType) {
                     case "application/vnd.microsoft.card.hero":
-                        return e.content ? o.createElement("div", {
-                            className: "wc-card hero",
-                            onClick: n(e.content.tap)
-                        }, s(e.content.images), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
+                        //2017.06.19 수정
+                        if (e.content.title == "화이트 크림" || e.content.title == "이온 실버" || e.content.title == "루나 그레이" || e.content.title == "판테라 그레이" || e.content.title == "미드나잇 블랙" || e.content.title == "발렌타인 레드" || e.content.title == "그랑 블루" || e.content.title == "쉐이드 브론즈" || e.content.title == "카키 메탈") {
+                            return e.content ? o.createElement("div", {
+                                className: "wc-card hero",
+                                onClick: n(e.content.tap)
+                            }, o.createElement("div", { className: "wc-card-hero-newImage" }, s(e.content.images)), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
+                        } else {
+                            return e.content ? o.createElement("div", {
+                                className: "wc-card hero",
+                                onClick: n(e.content.tap)
+                            }, s(e.content.images), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
+                        }
                     case "application/vnd.microsoft.card.thumbnail":
                         return e.content ? o.createElement("div", {
                             className: "wc-card thumbnail",
                             onClick: n(e.content.tap)
                         }, d(e.content.title), s(e.content.images), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
                     case "application/vnd.microsoft.card.video":
-                        return e.content && e.content.media && 0 !== e.content.media.length ? o.createElement("div", {
-                            className: "wc-card video"
-                        }, o.createElement(p, {
-                            type: "video",
-                            src: e.content.media[0].url,
-                            onLoad: t.onImageLoad,
-                            poster: e.content.image && e.content.image.url,
-                            autoPlay: e.content.autostart,
-                            loop: e.content.autoloop
-                        }), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
+                        //2017.06.19 수정
+                        if (e.content.title == "그랜다이저") {
+                            return e.content && e.content.media && 0 !== e.content.media.length ? o.createElement("div", {
+                                className: "wc-card video"
+                            },
+                                o.createElement("div", { className: "wc-card-video-newVideo" },
+                                    o.createElement(p, {
+                                        type: "video",
+                                        src: e.content.media[0].url,
+                                        onLoad: t.onImageLoad,
+                                        poster: e.content.image && e.content.image.url,
+                                        autoPlay: e.content.autostart,
+                                        loop: e.content.autoloop
+                                    })), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
+                        } else {
+                            return e.content && e.content.media && 0 !== e.content.media.length ? o.createElement("div", {
+                                className: "wc-card video"
+                            }, o.createElement(p, {
+                                type: "video",
+                                src: e.content.media[0].url,
+                                onLoad: t.onImageLoad,
+                                poster: e.content.image && e.content.image.url,
+                                autoPlay: e.content.autostart,
+                                loop: e.content.autoloop
+                            }), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
+                        }
                     case "application/vnd.microsoft.card.animation":
                         return e.content && e.content.media && 0 !== e.content.media.length ? o.createElement("div", {
                             className: "wc-card animation"
@@ -5923,7 +5947,8 @@
                 var t = this.props,
                     e = (t.attachments, r.__rest(t, ["attachments"]));
                 return o.createElement("ul", null, this.props.attachments.map(function(t, n) {
-
+                        //2017.06.15 수정
+                        //---------------
                         if (t.contentType == "application/vnd.microsoft.card.video") {
                             return o.createElement("li", {
                                 key: n,
@@ -5953,7 +5978,7 @@
                                 attachment: t
                             }, e)))
                         }
-
+                        //-----------------
                 }))
             }, e
         }(o.PureComponent)
@@ -6188,7 +6213,9 @@
                         default:
                             var n = void 0;
                             this.props.showTimestamp && (n = this.props.format.strings.timeSent.replace("%1", new Date(this.props.activity.timestamp).toLocaleTimeString())), t = o.createElement("span", null, this.props.activity.from.name || this.props.activity.from.id, n)
-                    }
+                        }
+                    //2017.06.15 수정
+                    //----------------
 					if(this.props.activity.attachments != undefined && this.props.activity.attachments.length > 1 && this.props.activity.attachments[1].contentType == "application/vnd.microsoft.card.hero") {
                     var r = this.props.fromMe ? "me" : "bot",
                         i = a.classList("wc-message-wrapper", this.props.activity.attachmentLayout || "list", this.props.onClickActivity && "clickable"),
@@ -6197,7 +6224,8 @@
                     var r = this.props.fromMe ? "me" : "bot",
                         i = a.classList("wc-message-wrapper", this.props.activity.attachmentLayout || "list", this.props.onClickActivity && "clickable"),
                         s = a.classList("wc-message-content", this.props.selected && "selected");
-					}
+                    }
+                    //-------------------
                     return o.createElement("div", {
                         "data-activity-id": this.props.activity.id,
                         className: i,
