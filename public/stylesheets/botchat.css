@@ -469,7 +469,7 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {font-family: 'Seg
   display: none;
 }
 
-.wc-message-from-bot svg.wc-message-callout {width:68px; height:54px; background: url(../image/ico_car.png) no-repeat 0 0;left:-15px; margin-top:-5px}
+.wc-message-from-bot svg.wc-message-callout {width:68px; height:54px; background: url(../image/convenience_chatbot.png) no-repeat 0 0;left:-15px; margin-top:-5px}
 
 /* console */
 .wc-console > * {
