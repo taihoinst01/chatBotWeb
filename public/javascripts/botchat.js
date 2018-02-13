@@ -6023,7 +6023,8 @@
         };
         var c = function(t, e) {
             var n = t.replace(/<br\s*\/?>/gi, "\r\n\r\n"),
-                r = s.render(n);
+				r = s.render(n);
+			lfn_speakTTS(t);	/* 20180201 vagelsoft.com :  lfn_speakTTS 異붽?*/
             return o.createElement("div", {
                 className: "format-markdown",
                 dangerouslySetInnerHTML: {
@@ -6344,8 +6345,11 @@
                     "Enter" === t.key && this.sendMessage()
                 }, e.prototype.onClickSend = function() {
                     this.textInput.focus(), this.sendMessage()
-                }, e.prototype.onChangeFile = function() {
-                    this.textInput.focus(), this.props.sendFiles(this.fileInput.files), this.fileInput.value = null
+				}, e.prototype.onClickMic = function () { //20180201 vagelsoft.com 留덉씠???대┃ ?대깽??異붽?
+					lfn_stopTTS();
+					mic.toggleListening();
+				},e.prototype.onChangeFile = function() {
+					this.textInput.focus(), this.props.sendFiles(this.fileInput.files), this.fileInput.value = null
                 }, e.prototype.render = function() {
                     var t = this,
                         e = "wc-console";
@@ -6383,7 +6387,15 @@
                             return t.onKeyPress(e)
                         },
                         placeholder: this.props.strings.consolePlaceholder
-                    })), o.createElement("label", {
+						})), o.createElement("img", {	// 20180201 vagelsoft.com 留덉씠???대?吏 異붽?
+							className: "wc-mic",
+							id: "wc-mic",
+							src: "image/micBlack.png",
+							onClick: function () {
+								return t.onClickMic()
+							}
+						}
+						),o.createElement("label", {
                         className: "wc-send",
                         onClick: function() {
                             return t.onClickSend()
