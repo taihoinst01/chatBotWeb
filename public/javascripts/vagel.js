@@ -25,6 +25,7 @@ function printMsg(flag,msg){
 	}else{
         console.log(flag + " : " + msg);
         $(".wc-shellinput").val(msg);
+        $(".wc-console").addClass("has-text");
         $(".wc-send").trigger("click");
 	}
 }
