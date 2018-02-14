@@ -29,7 +29,9 @@ function printMsg(flag,msg){
 
         //$("input[type=text]").value = msg;
         $(".wc-console").addClass("has-text");
-        $(".wc-send").trigger("click");
+        //$(".wc-send").trigger("click");
+        var e = jQuery.Event("keydown", { keyCode: 13 });
+        $(this).trigger(e);
 	}
 }
 
