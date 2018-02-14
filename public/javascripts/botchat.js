@@ -962,7 +962,7 @@
                     return t.timeStamp || Date.now()
                 },
                 defaultPrevented: null,
-                isTrusted: null
+                isTrusted: true
             };
         o(r.prototype, {
             preventDefault: function() {
