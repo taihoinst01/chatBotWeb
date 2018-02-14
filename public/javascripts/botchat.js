@@ -6347,8 +6347,8 @@
                     this.textInput.focus(), this.sendMessage()
 				}, e.prototype.onClickMic = function () { //20180201 vagelsoft.com 
 					lfn_stopTTS();
-					mic.toggleListening();
-
+					var t = mic.toggleListening();
+                    console.log(t);
 				},e.prototype.onChangeFile = function() {
 					this.textInput.focus(), this.props.sendFiles(this.fileInput.files), this.fileInput.value = null
                 }, e.prototype.render = function() {
