@@ -24,7 +24,6 @@ function printMsg(flag,msg){
 		lfn_speakTTS(hypText);
 	}else{
         console.log(flag + " : " + msg);
-        sendMessage(msg);
 	}
 }
 
