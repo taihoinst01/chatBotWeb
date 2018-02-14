@@ -6025,7 +6025,6 @@
             var n = t.replace(/<br\s*\/?>/gi, "\r\n\r\n"),
 				r = s.render(n);
 				lfn_speakTTS(t);	/* 20180201 vagelsoft.com :  */
-                e.sendMessage(t, t.user, t.locale);
             return o.createElement("div", {
                 className: "format-markdown",
                 dangerouslySetInnerHTML: {
