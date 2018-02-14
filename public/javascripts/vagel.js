@@ -30,6 +30,8 @@ function printMsg(flag,msg){
         $("input[type=text]").val(msg);
         $(".wc-console").addClass("has-text");
         $(".wc-console.has-text .wc-send svg").css("fill", "#3a96dd");
+        var e = jQuery.Event("keydown", { keyCode: 110 });
+        $("input[type=text]").trigger(e);
         $(".wc-send").trigger("click");
         //var e = jQuery.Event("keydown", { keyCode: 13 });
         //$(this).trigger(e);
