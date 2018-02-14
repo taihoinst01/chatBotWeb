@@ -24,7 +24,7 @@ function printMsg(flag,msg){
 		lfn_speakTTS(hypText);
 	}else{
         console.log(flag + " : " + msg);
-        $("input").val(msg);
+        $("input[type=text]").val(msg);
         $(".wc-console").addClass("has-text");
         $(".wc-send").trigger("click");
 	}
