@@ -25,13 +25,14 @@ function printMsg(flag,msg){
 	}else{
         console.log(flag + " : " + msg);
 
-        $(".wc-textbox").html('<input type="text" class="wc-shellinput" value="'+msg+'" placeholder="Type your message...">')
+        //$(".wc-textbox").html('<input type="text" class="wc-shellinput" value="'+msg+'" placeholder="Type your message...">')
 
-        //$("input[type=text]").value = msg;
+        $("input[type=text]").value = msg;
         $(".wc-console").addClass("has-text");
-        //$(".wc-send").trigger("click");
-        var e = jQuery.Event("keydown", { keyCode: 13 });
-        $(this).trigger(e);
+        $(".wc-console.has-text .wc-send svg").css("fill", "#3a96dd");
+        $(".wc-send").trigger("click");
+        //var e = jQuery.Event("keydown", { keyCode: 13 });
+        //$(this).trigger(e);
 	}
 }
 
