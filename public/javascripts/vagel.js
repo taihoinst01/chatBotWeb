@@ -23,7 +23,8 @@ function printMsg(flag,msg){
 		console.log(flag + " : " + msg);
 		lfn_speakTTS(hypText);
 	}else{
-		console.log(flag + " : " + msg);
+        console.log(flag + " : " + msg);
+        sendMessage(msg);
 	}
 }
 
