@@ -27,7 +27,7 @@ function printMsg(flag,msg){
 
         //$(".wc-textbox").html('<input type="text" class="wc-shellinput" value="'+msg+'" placeholder="Type your message...">')
 
-        $("input[type=text]").value = msg;
+        $("input[type=text]").val(msg);
         $(".wc-console").addClass("has-text");
         $(".wc-console.has-text .wc-send svg").css("fill", "#3a96dd");
         $(".wc-send").trigger("click");
