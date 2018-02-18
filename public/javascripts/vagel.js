@@ -32,7 +32,7 @@ function printMsg(flag,msg){
         //var e = jQuery.Event("keydown", { keyCode: 110 });
         //$("input[type=text]").trigger(e);
         //$(".wc-send").trigger("click");
-        var e = jQuery.Event("keypress", { keyCode: 32 });
+        var e = jQuery.Event("keyup", { keyCode: 32 });
         $("input[type=text]").trigger(e);
         //postButtonMessage(msg);
 	}
