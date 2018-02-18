@@ -21,7 +21,7 @@ function printMsg(flag,msg){
 	
 	if(flag === 'guide'){
 		console.log(flag + " : " + msg);
-		lfn_speakTTS(hypText);
+		//lfn_speakTTS(hypText);
 	}else{
         console.log(flag + " : " + msg);
 
