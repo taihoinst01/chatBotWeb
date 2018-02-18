@@ -32,9 +32,10 @@
         function postButtonMessage(msg) {
             botConnection
                 .postActivity({
-                    from: 'userid',
                     type: 'message',
-                    text: msg
+                    text: msg,
+                    from: { id: 'userid' },
+                    locale: 'ko'
                 })
                 .subscribe(function () {
                     console.log('"buttonClicked" sent');
