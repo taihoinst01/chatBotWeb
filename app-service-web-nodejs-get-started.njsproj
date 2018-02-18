@@ -48,6 +48,7 @@
     <Folder Include="FromExistingCode1\obj" />
     <Folder Include="FromExistingCode1\obj\Debug" />
     <Folder Include="public" />
+    <Folder Include="public\image\" />
     <Folder Include="public\lib\" />
     <Folder Include="public\stylesheets" />
     <Folder Include="routes" />
