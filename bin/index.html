@@ -18,13 +18,30 @@
   	<script src="https://grandizer.azurewebsites.net/javascripts/botchat.js"></script>
   	<script src="https://grandizer.azurewebsites.net/javascripts/vagel.js"></script>
   	<script>
-		  BotChat.App({
-			  directLine: { secret: '2gIRLJx-vUY.cwA.eVs.6K9Dk-RNgyuX0uJsuz18IOzzojGgWudEQ7oi_Vr2Chs' },
-			  user: { id: 'userid' },
-			  bot: { id: 'botid' },
-              resize: 'detect',
-              sendTyping: true
-		  }, document.getElementById("bot"));
+        const botConnection = new BotChat.DirectLine({
+            secret: '2gIRLJx-vUY.cwA.eVs.6K9Dk-RNgyuX0uJsuz18IOzzojGgWudEQ7oi_Vr2Chs'
+        });
+
+		BotChat.App({
+            botConnection: botConnection,
+			user: { id: 'userid' },
+			bot: { id: 'botid' },
+            resize: 'detect'
+        }, document.getElementById("bot"));
+
+        function postButtonMessage(msg) {
+            botConnection
+                .postActivity({
+                    from: { id: 'userid' },
+                    name: 'user',
+                    type: 'message',
+                    value: msg
+                })
+                .subscribe(function (id) {
+                    console.log('"buttonClicked" sent');
+                });
+        };
+
   	</script>
   </body>
 </html>
