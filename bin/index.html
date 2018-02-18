@@ -32,8 +32,7 @@
         function postButtonMessage(msg) {
             botConnection
                 .postActivity({
-                    from: { id: 'userid' },
-                    name: 'user',
+                    from: 'userid',
                     type: 'message',
                     value: msg
                 })
