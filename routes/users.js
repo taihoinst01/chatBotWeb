@@ -18,7 +18,7 @@ var dbconfig = {
             log: true
         },
         encrypt: true,
-        database: 'taihoML'
+        database: 'taihoML2'
     }
 };
 
