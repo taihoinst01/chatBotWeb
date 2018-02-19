@@ -30,6 +30,7 @@ function printMsg(flag,msg){
         $('.wc-console').addClass('has-text');
         $(".wc-send").trigger("click");
         $(".wc-shellinput").val('');
+        $('.wc-console').removeClass('has-text');
         //postButtonMessage(msg);
 	}
 }
