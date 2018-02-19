@@ -6380,10 +6380,10 @@
                         },
                         autoFocus: !0,
                         value: this.props.inputText,
-                        onChange: function(e) {
+                        onChange: function (e) {
                             return t.props.onChangeText(t.textInput.value)
                         },
-                        onKeyPress: function(e) {
+                        onKeyPress: function (e) {
                             return t.onKeyPress(e)
                         },
                         placeholder: this.props.strings.consolePlaceholder
@@ -6397,7 +6397,8 @@
 						}
 						),o.createElement("label", {
                         className: "wc-send",
-                        onClick: function() {
+                        onClick: function (e) {
+                            t.props.inputText = $('.wc-shellinput').val();
                             return t.onClickSend()
                         }
                     }, o.createElement("svg", null, o.createElement("path", {
